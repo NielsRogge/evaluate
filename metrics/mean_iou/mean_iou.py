@@ -287,6 +287,7 @@ class MeanIoU(evaluate.Metric):
                     "references": datasets.Sequence(datasets.Sequence(datasets.Value("uint16"))),
                 }
             ),
+            format="numpy",
             reference_urls=[
                 "https://github.com/open-mmlab/mmsegmentation/blob/71c201b1813267d78764f306a297ca717827c4bf/mmseg/core/evaluation/metrics.py"
             ],
