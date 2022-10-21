@@ -60,15 +60,6 @@ class EvaluationModuleInfo:
     config_name: Optional[str] = None
     experiment_id: Optional[str] = None
 
-    def __post_init__(self):
-        if self.format is not None:
-            for key, value in self.features.items():
-                if not isinstance(value, Value):
-                    raise ValueError(
-                        f"When using 'numpy' format, all features should be a `datasets.Value` feature. "
-                        f"Here {key} is an instance of {value.__class__.__name__}"
-                    )
-
     def write_to_directory(self, metric_info_dir):
         """Write `EvaluationModuleInfo` as JSON to `metric_info_dir`.
         Also save the license separately in LICENCE.
